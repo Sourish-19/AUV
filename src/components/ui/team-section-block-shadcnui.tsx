@@ -22,175 +22,345 @@ import { useState } from "react";
 
 const teamCategories = [
   {
-    title: "Faculty Advisor & Project Manager",
-    members: [
+    "title": "Founding Team",
+    "members": [
       {
-        name: "Dr. Alan Turing",
-        role: "Faculty Advisor",
-        bio: "Guiding the team with decades of robotics experience.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alan",
-        location: "University Campus",
-        skills: ["Robotics", "AI", "Mentorship"],
-        gradient: "from-blue-500/20 via-blue-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Animesh Mishra",
+        "role": "Team Co-Lead / Software and Automation Subsystem",
+        "bio": "Stay hungry. Stay goofy.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AnimeshMishra",
+        "location": "3rd Year",
+        "skills": [
+          "Software",
+          "Leadership"
+        ],
+        "gradient": "from-indigo-500/20 via-indigo-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/animesh-mishra-79028a231/",
+          "github": "https://github.com/AnimeshM21"
+        }
       },
       {
-        name: "Sarah Connor",
-        role: "Project Manager",
-        bio: "Keeping the project on track and on budget.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=SarahC",
-        location: "HQ",
-        skills: ["Agile", "Planning", "Leadership"],
-        gradient: "from-blue-500/20 via-blue-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Arunava Maiti",
+        "role": "Team Co-Lead / Electrical and Mechanical Subsytem Member",
+        "bio": "GGs",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ArunavaMaiti",
+        "location": "3rd Year",
+        "skills": [
+          "Electrical",
+          "Mechanical",
+          "Leadership"
+        ],
+        "gradient": "from-indigo-500/20 via-indigo-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": null
+        }
       },
       {
-        name: "John Smith",
-        role: "Assistant PM",
-        bio: "Coordinating between sub-teams efficiently.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=John",
-        location: "HQ",
-        skills: ["Coordination", "Logistics"],
-        gradient: "from-blue-500/20 via-blue-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
-      },
-    ],
+        "name": "Azad Roy",
+        "role": "Teachnical Lead / Electrical and Mechanical Subsystem Member",
+        "bio": "For the last time: there's more to controls than PID",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AzadRoy",
+        "location": "3rd Year",
+        "skills": [
+          "Electrical",
+          "Mechanical",
+          "Leadership"
+        ],
+        "gradient": "from-indigo-500/20 via-indigo-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/azad-roy-43329b376",
+          "github": null
+        }
+      }
+    ]
   },
   {
-    title: "Founding Team",
-    members: [
+    "title": "Senior Team",
+    "members": [
       {
-        name: "Ada Lovelace",
-        role: "Founder & Lead Architect",
-        bio: "Visionary behind the AUV core architecture.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ada",
-        location: "Lab A",
-        skills: ["Systems", "Architecture", "Vision"],
-        gradient: "from-indigo-500/20 via-indigo-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Chatur Vasireddy",
+        "role": "Electrical and Mechanical Subsystem Member",
+        "bio": "meow",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ChaturVasireddy",
+        "location": "2nd Year",
+        "skills": [
+          "Electrical",
+          "Mechanical"
+        ],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": "https://github.com/ChaturVasireddy"
+        }
       },
       {
-        name: "Nikola Tesla",
-        role: "Co-Founder & Electronics",
-        bio: "Designing the power and control systems.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Nikola",
-        location: "Lab B",
-        skills: ["Hardware", "Power", "Circuits"],
-        gradient: "from-indigo-500/20 via-indigo-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Faizal Yusuf Baig",
+        "role": "Electrical and Mechanical Subsystem Member",
+        "bio": "Time you enjoy wasting is not wasted time.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=FaizalYusufBaig",
+        "location": "2nd Year",
+        "skills": [
+          "Electrical",
+          "Mechanical"
+        ],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/faizal-baig-6583b7371?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+          "github": null
+        }
       },
       {
-        name: "Grace Hopper",
-        role: "Co-Founder & Software",
-        bio: "Pioneering the autonomous navigation stack.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Grace",
-        location: "Lab A",
-        skills: ["C++", "ROS", "Algorithms"],
-        gradient: "from-indigo-500/20 via-indigo-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Aditya R Jemshetty",
+        "role": "Software and Automation Subsystem Member",
+        "bio": "Life is short\u2014 skip DFS, do BFS :)",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdityaRJemshetty",
+        "location": "2nd Year",
+        "skills": [
+          "Software"
+        ],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/aditya-r-jemshetty-036311331/",
+          "github": "https://github.com/Aditya5191"
+        }
       },
-    ],
+      {
+        "name": "Adwait Bhardwaj",
+        "role": "Electrical and Mechanical Subsystem Member",
+        "bio": "aquamariner",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdwaitBhardwaj",
+        "location": "2nd Year",
+        "skills": [
+          "Electrical",
+          "Mechanical"
+        ],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/adwaitbhardwaj",
+          "github": "https://github.com/vt-abt"
+        }
+      },
+      {
+        "name": "Advithiya Duddu",
+        "role": "Software and Automation Subsystem Member",
+        "bio": "you miss 100% of the shots you don't take",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdvithiyaDuddu",
+        "location": "2nd Year",
+        "skills": [
+          "Software"
+        ],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/advithiya-duddu",
+          "github": null
+        }
+      },
+      {
+        "name": "Siddharth P S",
+        "role": "Management and Design Subsystem",
+        "bio": "i am a fumbler.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=SiddharthPS",
+        "location": "2nd Year",
+        "skills": [
+          "Management",
+          "Design"
+        ],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": null
+        }
+      }
+    ]
   },
   {
-    title: "Senior Team",
-    members: [
+    "title": "Junior Team",
+    "members": [
       {
-        name: "Linus Torvalds",
-        role: "Senior Software Engineer",
-        bio: "Optimizing the OS and low-level drivers.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Linus",
-        location: "Remote",
-        skills: ["Linux", "Kernel", "C"],
-        gradient: "from-cyan-500/20 via-cyan-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Harshika Devarasetty",
+        "role": "Electrical Subsystem Trainee",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=HarshikaDevarasetty",
+        "location": "2nd Year",
+        "skills": [
+          "Electrical"
+        ],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/harshika-devarasetty-198b1a389?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+          "github": "https://github.com/Harshika2304"
+        }
       },
       {
-        name: "Margaret Hamilton",
-        role: "Flight Software Lead",
-        bio: "Ensuring robust and fault-tolerant code.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Margaret",
-        location: "Lab A",
-        skills: ["Reliability", "Testing", "Control"],
-        gradient: "from-cyan-500/20 via-cyan-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Serah Saju Jacob",
+        "role": "Electrical Subsystem Trainee",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=SerahSajuJacob",
+        "location": "2nd Year",
+        "skills": [
+          "Electrical"
+        ],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/serah-jacob-08a4bb33a",
+          "github": "https://github.com/serahjacob76"
+        }
       },
       {
-        name: "Katherine Johnson",
-        role: "Navigation Specialist",
-        bio: "Calculating precise trajectories and paths.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Katherine",
-        location: "Lab A",
-        skills: ["Math", "Physics", "Pathfinding"],
-        gradient: "from-cyan-500/20 via-cyan-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Piyush Sahoo",
+        "role": "Software and Automation Subsystem Trainee",
+        "bio": "Remember to source install/setup.bash ;)",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=PiyushSahoo",
+        "location": "1st Year",
+        "skills": [
+          "Software"
+        ],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/piyush-sahoo-230269323/",
+          "github": "https://github.com/piyushSahooDB"
+        }
       },
       {
-        name: "Hedy Lamarr",
-        role: "Communications Lead",
-        bio: "Developing secure acoustic telemetry.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Hedy",
-        location: "Lab B",
-        skills: ["Signals", "Acoustics", "Security"],
-        gradient: "from-cyan-500/20 via-cyan-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Aryan Sharma",
+        "role": "Electrical Subsystem Trainee",
+        "bio": "Plugged in.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AryanSharma",
+        "location": "1st Year",
+        "skills": [
+          "Electrical"
+        ],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/aryan-sharma101106",
+          "github": "https://github.com/Aryan-061"
+        }
       },
       {
-        name: "Richard Feynman",
-        role: "Senior Physicist",
-        bio: "Modeling fluid dynamics and drag.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Richard",
-        location: "Lab C",
-        skills: ["CFD", "Physics", "Modeling"],
-        gradient: "from-cyan-500/20 via-cyan-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Kshithij Jaitly",
+        "role": "Mechanical Subsystem Trainee",
+        "bio": "Fusion pls dont crash !!!",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KshithijJaitly",
+        "location": "1st Year",
+        "skills": [
+          "Mechanical"
+        ],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/kshithij-jaitly-84237b376",
+          "github": "https://github.com/kshithij-j"
+        }
       },
       {
-        name: "Marie Curie",
-        role: "Materials Scientist",
-        bio: "Researching pressure-resistant hulls.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marie",
-        location: "Lab C",
-        skills: ["Materials", "Testing", "Chemistry"],
-        gradient: "from-cyan-500/20 via-cyan-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
-      },
-    ],
-  },
-  {
-    title: "Design Team",
-    members: [
-      {
-        name: "Jony Ive",
-        role: "Lead Industrial Designer",
-        bio: "Crafting the sleek hydrodynamic shape.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jony",
-        location: "Studio",
-        skills: ["CAD", "Aesthetics", "Ergonomics"],
-        gradient: "from-teal-500/20 via-teal-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Kanishk Thoguluva Ramesh Babu",
+        "role": "Mechanical Subsystem Trainee",
+        "bio": "Monkey See Monkey Do",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KanishkThoguluvaRameshBabu",
+        "location": "1st Year",
+        "skills": [
+          "Mechanical"
+        ],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": null
+        }
       },
       {
-        name: "Dieter Rams",
-        role: "UI/UX Designer",
-        bio: "Designing the operator control station.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dieter",
-        location: "Studio",
-        skills: ["UI", "UX", "Human-Computer Interaction"],
-        gradient: "from-teal-500/20 via-teal-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Gayatri. B",
+        "role": "Electrical Subsystem Trainee",
+        "bio": "Yesterday is history, tomorrow is a mystery, but today is a gift.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=Gayatri.B",
+        "location": "1st Year",
+        "skills": [
+          "Electrical"
+        ],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": null
+        }
       },
       {
-        name: "Zaha Hadid",
-        role: "3D Modeler",
-        bio: "Creating complex internal structural mounts.",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Zaha",
-        location: "Studio",
-        skills: ["3D Modeling", "Generative Design"],
-        gradient: "from-teal-500/20 via-teal-500/5 to-transparent",
-        social: { twitter: "#", linkedin: "#", github: "#", email: "#" },
+        "name": "Kaushiki Gupta",
+        "role": "Management and Design Subsystem Traniee",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KaushikiGupta",
+        "location": "1st Year",
+        "skills": [
+          "Management",
+          "Design"
+        ],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": null
+        }
       },
-    ],
-  },
+      {
+        "name": "Kopal Agrawal",
+        "role": "Electrical Subsystem Trainee",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KopalAgrawal",
+        "location": "1st Year",
+        "skills": [
+          "Electrical"
+        ],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/kopal-agrawal-912492252/",
+          "github": "https://github.com/kopal1237"
+        }
+      },
+      {
+        "name": "Shaurya Veer Singh",
+        "role": "Mechanical Subsystem Trainee",
+        "bio": "Peace",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ShauryaVeerSingh",
+        "location": "1st Year",
+        "skills": [
+          "Mechanical"
+        ],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/shaurya-veer-singh-23255b356/",
+          "github": "https://github.com/ShauryaVS-bit"
+        }
+      },
+      {
+        "name": "Aaishi Gupta",
+        "role": "Software and Automation Subsystem Trainee",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AaishiGupta",
+        "location": "1st Year",
+        "skills": [
+          "Software"
+        ],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/aaishi-gupta-1651782a9",
+          "github": "https://github.com/aaishii07"
+        }
+      },
+      {
+        "name": "Farha P K",
+        "role": "Software and Automation Subsystem Trainee",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=FarhaPK",
+        "location": "1st Year",
+        "skills": [
+          "Software"
+        ],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": null
+        }
+      }
+    ]
+  }
 ];
 
 const containerVariants: Variants = {
