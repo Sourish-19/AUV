@@ -90,7 +90,7 @@ export default function VerticalTabs() {
           {/* Left Column: Content */}
           <div className="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1 pt-8">
             <div className="space-y-2 mb-16">
-              <h2 className="tracking-tighter text-balance text-4xl font-medium md:text-5xl lg:text-6xl text-white">
+              <h2 className="tracking-tight text-balance text-4xl font-bold md:text-5xl lg:text-6xl text-white">
                 Our Approach
               </h2>
               <span className="text-xs font-medium text-slate-400 uppercase tracking-[0.3em] block ml-1">
@@ -136,7 +136,7 @@ export default function VerticalTabs() {
                     <div className="flex flex-col gap-3 flex-1">
                       <span
                         className={cn(
-                          "text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight transition-colors duration-500",
+                          "text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight transition-colors duration-500",
                           isActive ? "text-white" : ""
                         )}
                       >

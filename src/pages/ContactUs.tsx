@@ -3,6 +3,7 @@
 import { StaggeredGrid, BentoItem } from "@/components/ui/staggered-grid";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
 import { Github, Instagram, Linkedin, Mail, Youtube, MapPin, Phone, Send } from "lucide-react";
+import githubImg from "../assets/github.png";
 
 export function ContactUs() {
   const images = Array.from({ length: 20 }, (_, i) => `https://picsum.photos/seed/contact${i}/400/400`);
@@ -11,6 +12,7 @@ export function ContactUs() {
     {
       id: 1,
       title: "YouTube",
+      href: "https://www.youtube.com/@TeamAUVMIT-B",
       subtitle: "Video Content",
       description: "Watch our latest updates and tutorials.",
       icon: <Youtube className="w-4 h-4" />,
@@ -19,6 +21,7 @@ export function ContactUs() {
     {
       id: 2,
       title: "Instagram",
+      href: "https://www.instagram.com/auv_mitb?igsh=azA2d2N3eGlqdDlh",
       subtitle: "Visual Updates",
       description: "Follow our journey and behind the scenes.",
       icon: <Instagram className="w-4 h-4" />,
@@ -27,6 +30,7 @@ export function ContactUs() {
     {
       id: 3,
       title: "LinkedIn",
+      href: "https://www.linkedin.com/company/team-auv-mit-b/",
       subtitle: "Professional Network",
       description: "Connect with our team professionally.",
       icon: <Linkedin className="w-4 h-4" />,
@@ -35,6 +39,7 @@ export function ContactUs() {
     {
       id: 4,
       title: "Gmail",
+      href: "mailto:auv.mitb@gmail.com",
       subtitle: "Direct Contact",
       description: "Reach out to us directly via email.",
       icon: <Mail className="w-4 h-4" />,
@@ -43,10 +48,11 @@ export function ContactUs() {
     {
       id: 5,
       title: "GitHub",
+      href: "https://github.com/MITB-AUVTeam",
       subtitle: "Open Source",
       description: "Check out our open source projects.",
       icon: <Github className="w-4 h-4" />,
-      image: "https://picsum.photos/seed/github/600/400"
+      image: githubImg
     },
   ];
 
@@ -88,7 +94,7 @@ export function ContactUs() {
                   </div>
                   <div>
                     <p className="text-sm text-slate-500 font-medium uppercase tracking-wider">Email Us</p>
-                    <p className="text-slate-200 text-lg">abc@gmail.com</p>
+                    <p className="text-slate-200 text-lg">auv.mitb@gmail.com</p>
                   </div>
                 </div>
 

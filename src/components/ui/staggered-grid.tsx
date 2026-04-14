@@ -16,6 +16,7 @@ export interface BentoItem {
   icon: React.ReactNode
   content?: React.ReactNode
   image?: string
+  href?: string
 }
 
 export interface StaggeredGridProps {
@@ -44,7 +45,8 @@ export function StaggeredGrid({
   const [isLoaded, setIsLoaded] = useState(false)
   const gridFullRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLDivElement>(null)
-  const [activeBento, setActiveBento] = useState<number>(0);
+  const githubIndex = bentoItems?.findIndex(item => item.title.toLowerCase() === 'github');
+  const [activeBento, setActiveBento] = useState<number>(githubIndex !== -1 ? githubIndex : 0);
 
   const splitText = (text: string) => {
       return text.split('').map((char, i) => (
@@ -174,15 +176,19 @@ export function StaggeredGrid({
                                   {bentoItems.map((bentoItem, index) => {
                                       const isActive = activeBento === index;
                                       return (
-                                          <div
+                                          <a
+                                              href={bentoItem.href || '#'}
+                                              target={bentoItem.href ? "_blank" : undefined}
+                                              rel={bentoItem.href ? "noopener noreferrer" : undefined}
                                               key={bentoItem.id}
                                               className={cn(
-                                                  "relative cursor-pointer overflow-hidden rounded-2xl h-full transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]",
+                                                  "block relative cursor-pointer overflow-hidden rounded-2xl h-full transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]",
                                                   isActive ? "bg-slate-800 shadow-2xl shadow-blue-900/20" : "bg-slate-950"
                                               )}
                                               style={{ width: isActive ? "60%" : "20%" }}
-                                              onMouseEnter={() => setActiveBento(index)}
-                                              onClick={() => setActiveBento(index)}
+                                              onClick={(e) => {
+                                                  if (!bentoItem.href) e.preventDefault();
+                                              }}
                                           >
                                               <div className={cn(
                                                   "absolute inset-0 rounded-2xl border z-50 pointer-events-none transition-colors duration-700",
@@ -214,7 +220,7 @@ export function StaggeredGrid({
                                                   <div className="text-white/50">{bentoItem.icon}</div>
                                                   <span className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">{bentoItem.title}</span>
                                               </div>
-                                          </div>
+                                          </a>
                                       )
                                   })}
                               </div>
@@ -224,19 +230,31 @@ export function StaggeredGrid({
                       if (typeof item === 'string') {
                           const Icon = iconsList[i % iconsList.length];
                           const label = labelsList[i % labelsList.length];
+                          const bentoData = bentoItems?.find((b) => b.title === label);
                           return (
-                              <figure key={`img-${i}`} className="grid__item m-0 relative z-10 [perspective:800px] will-change-[transform,opacity] group cursor-pointer">
-                                  <div className="grid__item-img w-full h-full [backface-visibility:hidden] will-change-transform rounded-xl overflow-hidden shadow-sm border border-slate-800 bg-slate-900/40 flex items-center justify-center transition-all duration-500 ease-out group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-blue-900/20">
-                                      <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/40 via-[#020617]/80 to-[#020617] backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
-                                      <div className="relative z-10 flex flex-col items-center justify-center gap-3">
-                                          <Icon className="w-8 h-8 text-slate-500 transition-all duration-300 group-hover:text-blue-400 group-hover:scale-110" />
-                                          <div className="text-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 delay-75">
-                                              <span className="block text-[10px] font-medium text-white/90 uppercase tracking-wider mb-0.5">Connect via</span>
-                                              <span className="block text-sm font-bold text-white tracking-tight">{label}</span>
+                              <a 
+                                  key={`img-${i}`} 
+                                  href={bentoData?.href || '#'}
+                                  target={bentoData?.href ? "_blank" : undefined}
+                                  rel={bentoData?.href ? "noopener noreferrer" : undefined}
+                                  className="grid__item block m-0 relative z-10 [perspective:800px] will-change-[transform,opacity] group cursor-pointer"
+                                  onClick={(e) => {
+                                      if (!bentoData?.href) e.preventDefault();
+                                  }}
+                              >
+                                  <figure className="w-full h-full m-0">
+                                      <div className="grid__item-img w-full h-full [backface-visibility:hidden] will-change-transform rounded-xl overflow-hidden shadow-sm border border-slate-800 bg-slate-900/40 flex items-center justify-center transition-all duration-500 ease-out group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-blue-900/20">
+                                          <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/40 via-[#020617]/80 to-[#020617] backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+                                          <div className="relative z-10 flex flex-col items-center justify-center gap-3">
+                                              <Icon className="w-8 h-8 text-slate-500 transition-all duration-300 group-hover:text-blue-400 group-hover:scale-110" />
+                                              <div className="text-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                                                  <span className="block text-[10px] font-medium text-white/90 uppercase tracking-wider mb-0.5">Connect via</span>
+                                                  <span className="block text-sm font-bold text-white tracking-tight">{label}</span>
+                                              </div>
                                           </div>
                                       </div>
-                                  </div>
-                              </figure>
+                                  </figure>
+                              </a>
                           )
                       }
                       return null;

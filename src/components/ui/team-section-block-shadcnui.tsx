@@ -13,16 +13,45 @@ import {
   Github,
   Linkedin,
   Mail,
-  MapPin,
   Sparkles,
-  Twitter,
 } from "lucide-react";
 import * as React from "react";
 import { useState } from "react";
 
 const teamCategories = [
   {
-    "title": "Founding Team",
+    "title": "Faculty Advisors",
+    "members": [
+      {
+        "name": "Dr. Ujjwal Verma",
+        "role": "Faculty advisor / ECE Dept(MIT-Manipal)",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=UjjwalVerma",
+        "location": "MIT-Manipal",
+        "skills": ["Faculty Advisor"],
+        "gradient": "from-indigo-500/20 via-indigo-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": null
+        }
+      },
+      {
+        "name": "Dr. Adithya G.S.S",
+        "role": "Faculty advisor / Mechanical Dept.(MIT-BLR)",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdithyaGSS",
+        "location": "MIT-BLR",
+        "skills": ["Faculty Advisor"],
+        "gradient": "from-indigo-500/20 via-indigo-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": null
+        }
+      }
+    ]
+  },
+  {
+    "title": "Leadership",
     "members": [
       {
         "name": "Animesh Mishra",
@@ -30,10 +59,7 @@ const teamCategories = [
         "bio": "Stay hungry. Stay goofy.",
         "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AnimeshMishra",
         "location": "3rd Year",
-        "skills": [
-          "Software",
-          "Leadership"
-        ],
+        "skills": ["Software", "Leadership"],
         "gradient": "from-indigo-500/20 via-indigo-500/5 to-transparent",
         "social": {
           "linkedin": "https://www.linkedin.com/in/animesh-mishra-79028a231/",
@@ -42,15 +68,11 @@ const teamCategories = [
       },
       {
         "name": "Arunava Maiti",
-        "role": "Team Co-Lead / Electrical and Mechanical Subsytem Member",
+        "role": "Team Co-Lead / Electrical and Mechanical Subsystem",
         "bio": "GGs",
         "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ArunavaMaiti",
         "location": "3rd Year",
-        "skills": [
-          "Electrical",
-          "Mechanical",
-          "Leadership"
-        ],
+        "skills": ["Electrical", "Mechanical", "Leadership"],
         "gradient": "from-indigo-500/20 via-indigo-500/5 to-transparent",
         "social": {
           "linkedin": null,
@@ -59,15 +81,11 @@ const teamCategories = [
       },
       {
         "name": "Azad Roy",
-        "role": "Teachnical Lead / Electrical and Mechanical Subsystem Member",
+        "role": "Technical Lead / Electrical and Mechanical Subsystem",
         "bio": "For the last time: there's more to controls than PID",
         "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AzadRoy",
         "location": "3rd Year",
-        "skills": [
-          "Electrical",
-          "Mechanical",
-          "Leadership"
-        ],
+        "skills": ["Electrical", "Mechanical", "Leadership"],
         "gradient": "from-indigo-500/20 via-indigo-500/5 to-transparent",
         "social": {
           "linkedin": "https://www.linkedin.com/in/azad-roy-43329b376",
@@ -77,69 +95,19 @@ const teamCategories = [
     ]
   },
   {
-    "title": "Senior Team",
+    "title": "Software Subsystem",
     "members": [
-      {
-        "name": "Chatur Vasireddy",
-        "role": "Electrical and Mechanical Subsystem Member",
-        "bio": "meow",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ChaturVasireddy",
-        "location": "2nd Year",
-        "skills": [
-          "Electrical",
-          "Mechanical"
-        ],
-        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
-        "social": {
-          "linkedin": null,
-          "github": "https://github.com/ChaturVasireddy"
-        }
-      },
-      {
-        "name": "Faizal Yusuf Baig",
-        "role": "Electrical and Mechanical Subsystem Member",
-        "bio": "Time you enjoy wasting is not wasted time.",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=FaizalYusufBaig",
-        "location": "2nd Year",
-        "skills": [
-          "Electrical",
-          "Mechanical"
-        ],
-        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
-        "social": {
-          "linkedin": "https://www.linkedin.com/in/faizal-baig-6583b7371?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-          "github": null
-        }
-      },
       {
         "name": "Aditya R Jemshetty",
         "role": "Software and Automation Subsystem Member",
-        "bio": "Life is short\u2014 skip DFS, do BFS :)",
+        "bio": "Life is short— skip DFS, do BFS :)",
         "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdityaRJemshetty",
         "location": "2nd Year",
-        "skills": [
-          "Software"
-        ],
+        "skills": ["Software"],
         "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
         "social": {
           "linkedin": "https://www.linkedin.com/in/aditya-r-jemshetty-036311331/",
           "github": "https://github.com/Aditya5191"
-        }
-      },
-      {
-        "name": "Adwait Bhardwaj",
-        "role": "Electrical and Mechanical Subsystem Member",
-        "bio": "aquamariner",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdwaitBhardwaj",
-        "location": "2nd Year",
-        "skills": [
-          "Electrical",
-          "Mechanical"
-        ],
-        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
-        "social": {
-          "linkedin": "https://www.linkedin.com/in/adwaitbhardwaj",
-          "github": "https://github.com/vt-abt"
         }
       },
       {
@@ -148,9 +116,7 @@ const teamCategories = [
         "bio": "you miss 100% of the shots you don't take",
         "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdvithiyaDuddu",
         "location": "2nd Year",
-        "skills": [
-          "Software"
-        ],
+        "skills": ["Software"],
         "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
         "social": {
           "linkedin": "https://www.linkedin.com/in/advithiya-duddu",
@@ -158,65 +124,12 @@ const teamCategories = [
         }
       },
       {
-        "name": "Siddharth P S",
-        "role": "Management and Design Subsystem",
-        "bio": "i am a fumbler.",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=SiddharthPS",
-        "location": "2nd Year",
-        "skills": [
-          "Management",
-          "Design"
-        ],
-        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
-        "social": {
-          "linkedin": null,
-          "github": null
-        }
-      }
-    ]
-  },
-  {
-    "title": "Junior Team",
-    "members": [
-      {
-        "name": "Harshika Devarasetty",
-        "role": "Electrical Subsystem Trainee",
-        "bio": "",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=HarshikaDevarasetty",
-        "location": "2nd Year",
-        "skills": [
-          "Electrical"
-        ],
-        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
-        "social": {
-          "linkedin": "https://www.linkedin.com/in/harshika-devarasetty-198b1a389?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-          "github": "https://github.com/Harshika2304"
-        }
-      },
-      {
-        "name": "Serah Saju Jacob",
-        "role": "Electrical Subsystem Trainee",
-        "bio": "",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=SerahSajuJacob",
-        "location": "2nd Year",
-        "skills": [
-          "Electrical"
-        ],
-        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
-        "social": {
-          "linkedin": "https://www.linkedin.com/in/serah-jacob-08a4bb33a",
-          "github": "https://github.com/serahjacob76"
-        }
-      },
-      {
         "name": "Piyush Sahoo",
-        "role": "Software and Automation Subsystem Trainee",
+        "role": "Software and Automation Subsystem Member",
         "bio": "Remember to source install/setup.bash ;)",
         "image": "https://api.dicebear.com/7.x/identicon/svg?seed=PiyushSahoo",
         "location": "1st Year",
-        "skills": [
-          "Software"
-        ],
+        "skills": ["Software"],
         "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
         "social": {
           "linkedin": "https://www.linkedin.com/in/piyush-sahoo-230269323/",
@@ -224,120 +137,12 @@ const teamCategories = [
         }
       },
       {
-        "name": "Aryan Sharma",
-        "role": "Electrical Subsystem Trainee",
-        "bio": "Plugged in.",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AryanSharma",
-        "location": "1st Year",
-        "skills": [
-          "Electrical"
-        ],
-        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
-        "social": {
-          "linkedin": "https://www.linkedin.com/in/aryan-sharma101106",
-          "github": "https://github.com/Aryan-061"
-        }
-      },
-      {
-        "name": "Kshithij Jaitly",
-        "role": "Mechanical Subsystem Trainee",
-        "bio": "Fusion pls dont crash !!!",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KshithijJaitly",
-        "location": "1st Year",
-        "skills": [
-          "Mechanical"
-        ],
-        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
-        "social": {
-          "linkedin": "https://www.linkedin.com/in/kshithij-jaitly-84237b376",
-          "github": "https://github.com/kshithij-j"
-        }
-      },
-      {
-        "name": "Kanishk Thoguluva Ramesh Babu",
-        "role": "Mechanical Subsystem Trainee",
-        "bio": "Monkey See Monkey Do",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KanishkThoguluvaRameshBabu",
-        "location": "1st Year",
-        "skills": [
-          "Mechanical"
-        ],
-        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
-        "social": {
-          "linkedin": null,
-          "github": null
-        }
-      },
-      {
-        "name": "Gayatri. B",
-        "role": "Electrical Subsystem Trainee",
-        "bio": "Yesterday is history, tomorrow is a mystery, but today is a gift.",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=Gayatri.B",
-        "location": "1st Year",
-        "skills": [
-          "Electrical"
-        ],
-        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
-        "social": {
-          "linkedin": null,
-          "github": null
-        }
-      },
-      {
-        "name": "Kaushiki Gupta",
-        "role": "Management and Design Subsystem Traniee",
-        "bio": "",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KaushikiGupta",
-        "location": "1st Year",
-        "skills": [
-          "Management",
-          "Design"
-        ],
-        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
-        "social": {
-          "linkedin": null,
-          "github": null
-        }
-      },
-      {
-        "name": "Kopal Agrawal",
-        "role": "Electrical Subsystem Trainee",
-        "bio": "",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KopalAgrawal",
-        "location": "1st Year",
-        "skills": [
-          "Electrical"
-        ],
-        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
-        "social": {
-          "linkedin": "https://www.linkedin.com/in/kopal-agrawal-912492252/",
-          "github": "https://github.com/kopal1237"
-        }
-      },
-      {
-        "name": "Shaurya Veer Singh",
-        "role": "Mechanical Subsystem Trainee",
-        "bio": "Peace",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ShauryaVeerSingh",
-        "location": "1st Year",
-        "skills": [
-          "Mechanical"
-        ],
-        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
-        "social": {
-          "linkedin": "https://www.linkedin.com/in/shaurya-veer-singh-23255b356/",
-          "github": "https://github.com/ShauryaVS-bit"
-        }
-      },
-      {
         "name": "Aaishi Gupta",
-        "role": "Software and Automation Subsystem Trainee",
+        "role": "Software and Automation Subsystem Member",
         "bio": "",
         "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AaishiGupta",
         "location": "1st Year",
-        "skills": [
-          "Software"
-        ],
+        "skills": ["Software"],
         "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
         "social": {
           "linkedin": "https://www.linkedin.com/in/aaishi-gupta-1651782a9",
@@ -346,17 +151,269 @@ const teamCategories = [
       },
       {
         "name": "Farha P K",
-        "role": "Software and Automation Subsystem Trainee",
+        "role": "Software and Automation Subsystem Member",
         "bio": "",
         "image": "https://api.dicebear.com/7.x/identicon/svg?seed=FarhaPK",
         "location": "1st Year",
-        "skills": [
-          "Software"
-        ],
+        "skills": ["Software"],
         "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
         "social": {
           "linkedin": null,
           "github": null
+        }
+      }
+    ]
+  },
+  {
+    "title": "Electrical Subsystem",
+    "members": [
+      {
+        "name": "Chatur Vasireddy",
+        "role": "Electrical Subsystem Member",
+        "bio": "meow",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ChaturVasireddy",
+        "location": "2nd Year",
+        "skills": ["Electrical"],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": "https://github.com/ChaturVasireddy"
+        }
+      },
+      {
+        "name": "Faizal Yusuf Baig",
+        "role": "Electrical Subsystem Member",
+        "bio": "Time you enjoy wasting is not wasted time.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=FaizalYusufBaig",
+        "location": "2nd Year",
+        "skills": ["Electrical"],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/faizal-baig-6583b7371?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+          "github": null
+        }
+      },
+      {
+        "name": "Adwait Bhardwaj",
+        "role": "Electrical Subsystem Member",
+        "bio": "aquamariner",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdwaitBhardwaj",
+        "location": "2nd Year",
+        "skills": ["Electrical"],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/adwaitbhardwaj",
+          "github": "https://github.com/vt-abt"
+        }
+      },
+      {
+        "name": "Harshika Devarasetty",
+        "role": "Electrical Subsystem Member",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=HarshikaDevarasetty",
+        "location": "2nd Year",
+        "skills": ["Electrical"],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/harshika-devarasetty-198b1a389?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+          "github": "https://github.com/Harshika2304"
+        }
+      },
+      {
+        "name": "Serah Saju Jacob",
+        "role": "Electrical Subsystem Member",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=SerahSajuJacob",
+        "location": "2nd Year",
+        "skills": ["Electrical"],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/serah-jacob-08a4bb33a",
+          "github": "https://github.com/serahjacob76"
+        }
+      },
+      {
+        "name": "Aryan Sharma",
+        "role": "Electrical Subsystem Member",
+        "bio": "Plugged in.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AryanSharma",
+        "location": "1st Year",
+        "skills": ["Electrical"],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/aryan-sharma101106",
+          "github": "https://github.com/Aryan-061"
+        }
+      },
+      {
+        "name": "Gayatri. B",
+        "role": "Electrical Subsystem Member",
+        "bio": "Yesterday is history, tomorrow is a mystery, but today is a gift.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=Gayatri.B",
+        "location": "1st Year",
+        "skills": ["Electrical"],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": "https://github.com/GayatriB7"
+        }
+      },
+      {
+        "name": "Kopal Agrawal",
+        "role": "Electrical Subsystem Member",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KopalAgrawal",
+        "location": "1st Year",
+        "skills": ["Electrical"],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/kopal-agrawal-912492252/",
+          "github": "https://github.com/kopal1237"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Mechanical Subsystem",
+    "members": [
+      {
+        "name": "Chatur Vasireddy",
+        "role": "Mechanical Subsystem Member",
+        "bio": "meow",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ChaturVasireddy",
+        "location": "2nd Year",
+        "skills": ["Mechanical"],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": "https://github.com/ChaturVasireddy"
+        }
+      },
+      {
+        "name": "Faizal Yusuf Baig",
+        "role": "Mechanical Subsystem Member",
+        "bio": "Time you enjoy wasting is not wasted time.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=FaizalYusufBaig",
+        "location": "2nd Year",
+        "skills": ["Mechanical"],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/faizal-baig-6583b7371?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+          "github": null
+        }
+      },
+      {
+        "name": "Adwait Bhardwaj",
+        "role": "Mechanical Subsystem Member",
+        "bio": "aquamariner",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdwaitBhardwaj",
+        "location": "2nd Year",
+        "skills": ["Mechanical"],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/adwaitbhardwaj",
+          "github": "https://github.com/vt-abt"
+        }
+      },
+      {
+        "name": "Kshithij Jaitly",
+        "role": "Mechanical Subsystem Member",
+        "bio": "Fusion pls dont crash !!!",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KshithijJaitly",
+        "location": "1st Year",
+        "skills": ["Mechanical"],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/kshithij-jaitly-84237b376",
+          "github": "https://github.com/kshithij-j"
+        }
+      },
+      {
+        "name": "Kanishk Thoguluva Ramesh Babu",
+        "role": "Mechanical Subsystem Member",
+        "bio": "Monkey See Monkey Do",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KanishkThoguluvaRameshBabu",
+        "location": "1st Year",
+        "skills": ["Mechanical"],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": null
+        }
+      },
+      {
+        "name": "Shaurya Veer Singh",
+        "role": "Mechanical Subsystem Member",
+        "bio": "Peace",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ShauryaVeerSingh",
+        "location": "1st Year",
+        "skills": ["Mechanical"],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/shaurya-veer-singh-23255b356/",
+          "github": "https://github.com/ShauryaVS-bit"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Management Subsystem",
+    "members": [
+      {
+        "name": "Siddharth P S",
+        "role": "Management Team Member",
+        "bio": "i am a fumbler.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=SiddharthPS",
+        "location": "2nd Year",
+        "skills": ["Management"],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": null
+        }
+      },
+      {
+        "name": "Kaushiki Gupta",
+        "role": "Management Team Member",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KaushikiGupta",
+        "location": "1st Year",
+        "skills": ["Management"],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": null,
+          "github": null
+        }
+      }
+    ]
+  },
+  {
+    "title": "Design Subsystem",
+    "members": [
+      {
+        "name": "Sourish Sri Vignesh S",
+        "role": "Design Team Member",
+        "bio": "NAH, I'D WIN.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=SourishSriVigneshS",
+        "location": "2nd Year",
+        "skills": ["Design"],
+        "gradient": "from-indigo-500/20 via-indigo-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/sourish-sri-vignesh-s-62a57b388/",
+          "github": "https://github.com/Sourish-19"
+        }
+      },
+      {
+        "name": "Pritisha Kakati",
+        "role": "Design Team Member",
+        "bio": "Professional pixel perfectionist.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=PritishaKakati",
+        "location": "2nd Year",
+        "skills": ["Design"],
+        "gradient": "from-indigo-500/20 via-indigo-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/pritisha-kakati-243571339/",
+          "github": "https://github.com/pclowdy"
         }
       }
     ]
@@ -471,9 +528,9 @@ function TeamMemberCard({ member }: { member: any }) {
                   animate={
                     isHovered
                       ? {
-                          rotate: shouldReduceMotion ? 0 : 360,
-                          scale: shouldReduceMotion ? 1 : [1, 1.08, 1],
-                        }
+                        rotate: shouldReduceMotion ? 0 : 360,
+                        scale: shouldReduceMotion ? 1 : [1, 1.08, 1],
+                      }
                       : { rotate: 0, scale: 1 }
                   }
                   transition={{
@@ -512,15 +569,7 @@ function TeamMemberCard({ member }: { member: any }) {
                 </Badge>
               </div>
 
-              <motion.div
-                className="mb-3 flex items-center justify-center gap-1 text-xs text-slate-400"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <MapPin className="h-3 w-3" aria-hidden />
-                <span>{member.location}</span>
-              </motion.div>
+              {/* Location removed */}
 
               <p className="mb-4 text-sm text-slate-300 flex-grow">
                 {member.bio}
@@ -560,41 +609,51 @@ function TeamMemberCard({ member }: { member: any }) {
                 transition={{ delay: 0.3 }}
               >
                 {[
-                  { icon: Twitter, label: "Twitter" },
-                  { icon: Linkedin, label: "LinkedIn" },
-                  { icon: Github, label: "GitHub" },
-                  { icon: Mail, label: "Email" },
-                ].map((social, idx) => (
-                  <motion.div
-                    key={social.label}
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={
-                      isHovered
-                        ? { scale: 1, rotate: shouldReduceMotion ? 0 : 0 }
-                        : { scale: 0.85, rotate: 0 }
-                    }
-                    transition={{
-                      delay: isHovered ? 0.1 * idx : 0,
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 20,
-                    }}
-                  >
-                    <Button
-                      size="icon"
-                      variant="ghost"
-                      className="h-8 w-8 rounded-full border border-white/10 bg-white/5 text-slate-400 transition-colors hover:text-white hover:bg-white/10"
+                  { icon: Linkedin, label: "LinkedIn", href: member.social?.linkedin },
+                  { icon: Github, label: "GitHub", href: member.social?.github },
+                  { icon: Mail, label: "Email", href: member.social?.email },
+                ].map((social, idx) => {
+                  if (!social.href) return null;
+
+                  let formattedHref = social.href;
+                  if (!formattedHref.startsWith('http') && !formattedHref.startsWith('mailto:')) {
+                    formattedHref = `https://${formattedHref}`;
+                  }
+
+                  return (
+                    <motion.div
+                      key={social.label}
+                      initial={{ scale: 0, rotate: -180 }}
+                      animate={
+                        isHovered
+                          ? { scale: 1, rotate: shouldReduceMotion ? 0 : 0 }
+                          : { scale: 0.85, rotate: 0 }
+                      }
+                      transition={{
+                        delay: isHovered ? 0.1 * idx : 0,
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 20,
+                      }}
                     >
-                      <motion.div
-                        transition={{
-                          duration: shouldReduceMotion ? 0.25 : 0.4,
-                        }}
-                      >
-                        <social.icon className="h-4 w-4" aria-hidden />
-                      </motion.div>
-                    </Button>
-                  </motion.div>
-                ))}
+                      <a href={formattedHref} target="_blank" rel="noopener noreferrer">
+                        <Button
+                          size="icon"
+                          variant="ghost"
+                          className="h-8 w-8 rounded-full border border-white/10 bg-white/5 text-slate-400 transition-colors hover:text-white hover:bg-white/10"
+                        >
+                          <motion.div
+                            transition={{
+                              duration: shouldReduceMotion ? 0.25 : 0.4,
+                            }}
+                          >
+                            <social.icon className="h-4 w-4" aria-hidden />
+                          </motion.div>
+                        </Button>
+                      </a>
+                    </motion.div>
+                  )
+                })}
               </motion.div>
             </div>
           </div>
@@ -644,45 +703,24 @@ export function TeamSectionBlock() {
 
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className="mb-16 text-center"
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-20"
         >
-          <motion.div className="mb-6 inline-block">
-            <Badge
-              className="gap-2 bg-blue-500/10 text-blue-300 border border-blue-500/20 backdrop-blur"
-              variant="secondary"
-            >
-              <Sparkles className="h-3 w-3" aria-hidden />
-              Our Dream Team
-            </Badge>
-          </motion.div>
-
-          <motion.h2
-            id="team-section-heading"
-            className="mb-6 bg-gradient-to-r from-white via-blue-100 to-slate-300 bg-clip-text text-5xl font-semibold tracking-tight text-transparent md:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            Meet the people behind
-            <br />
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              our success
-            </span>
-          </motion.h2>
-
-          <motion.p
-            className="mx-auto max-w-2xl text-lg text-slate-400"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
+          <div className="space-y-4">
+            <h2 id="team-section-heading" className="text-5xl md:text-7xl lg:text-[5.5rem] font-black uppercase tracking-tighter leading-none text-white">
+              Our Team
+            </h2>
+            <p className="text-slate-400 text-sm md:text-base tracking-[0.2em] uppercase font-medium ml-1">
+              Behind the Success
+            </p>
+          </div>
+          <p className="text-slate-300 max-w-md md:text-right text-sm md:text-base leading-relaxed">
             A diverse team of talented individuals working together to build
             amazing products and deliver exceptional results.
-          </motion.p>
+          </p>
         </motion.div>
 
         {/* Team Categories */}
