@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 export function MediaPage() {
   const featuredPost = {
@@ -39,7 +40,7 @@ export function MediaPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-slate-50 pb-24 font-sans">
+    <div className="min-h-screen bg-[#020617] text-slate-50 pb-0 font-sans">
       
       <section className="max-w-7xl mx-auto px-6 pt-12 md:pt-20 mb-16">
         <motion.div 
@@ -109,7 +110,7 @@ export function MediaPage() {
         </motion.div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6">
+      <section className="max-w-7xl mx-auto px-6 pb-24">
         <div className="flex items-center justify-between mb-10">
           <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
             Recent Articles
@@ -167,6 +168,8 @@ export function MediaPage() {
           ))}
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

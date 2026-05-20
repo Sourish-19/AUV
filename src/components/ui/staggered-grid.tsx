@@ -165,7 +165,7 @@ export function StaggeredGrid({
               </div>
           </section>
 
-          <section className="grid place-items-center w-full relative">
+          <section className="hidden lg:grid place-items-center w-full relative">
               <div ref={gridFullRef} className="grid--full relative w-full my-[10vh] h-auto aspect-[1.1] max-w-none p-4 grid gap-4 grid-cols-7 grid-rows-5">
                   <div className="grid-overlay absolute inset-0 z-[15] pointer-events-none opacity-0 bg-[#020617]/80 rounded-lg transition-opacity duration-500" />
                   {mixedGridItems.map((item, i) => {
@@ -187,7 +187,13 @@ export function StaggeredGrid({
                                               )}
                                               style={{ width: isActive ? "60%" : "20%" }}
                                               onClick={(e) => {
-                                                  if (!bentoItem.href) e.preventDefault();
+                                                  if (activeBento !== index) {
+                                                      e.preventDefault();
+                                                      e.stopPropagation();
+                                                      setActiveBento(index);
+                                                  } else if (!bentoItem.href) {
+                                                      e.preventDefault();
+                                                  }
                                               }}
                                           >
                                               <div className={cn(
@@ -239,7 +245,14 @@ export function StaggeredGrid({
                                   rel={bentoData?.href ? "noopener noreferrer" : undefined}
                                   className="grid__item block m-0 relative z-10 [perspective:800px] will-change-[transform,opacity] group cursor-pointer"
                                   onClick={(e) => {
-                                      if (!bentoData?.href) e.preventDefault();
+                                      if (activeBento !== mixedGridItems.indexOf('BENTO_GROUP')) {
+                                          // Allow clicking other image-icons on the grid to activate the corresponding bento card
+                                          const idx = bentoItems?.findIndex(b => b.title === label);
+                                          if (idx !== -1 && idx !== undefined) {
+                                              e.preventDefault();
+                                              setActiveBento(idx);
+                                          }
+                                      }
                                   }}
                               >
                                   <figure className="w-full h-full m-0">
@@ -258,6 +271,108 @@ export function StaggeredGrid({
                           )
                       }
                       return null;
+                  })}
+              </div>
+          </section>
+
+          {/* Mobile and Tablet Grid Layout */}
+          <section className="lg:hidden w-full relative my-12 px-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
+                  {bentoItems.map((bentoItem, index) => {
+                      const isActive = activeBento === index;
+                      const Icon = bentoItem.icon;
+                      
+                      return (
+                          <div
+                              key={bentoItem.id}
+                              onClick={() => setActiveBento(index)}
+                              className={cn(
+                                  "group relative cursor-pointer overflow-hidden rounded-3xl p-6 min-h-[220px] flex flex-col justify-between transition-all duration-500 border bg-slate-900/40 backdrop-blur-xl",
+                                  isActive 
+                                      ? "border-blue-500/50 shadow-lg shadow-blue-500/10 bg-slate-900/80 scale-[1.02]" 
+                                      : "border-slate-800/60 hover:border-slate-700/80 hover:bg-slate-900/60"
+                              )}
+                          >
+                              {/* Background Image / Gradient Overlay */}
+                              {bentoItem.image && (
+                                  <div className="absolute inset-0 z-0 opacity-[0.08] transition-opacity duration-500 group-hover:opacity-[0.12]">
+                                      <img 
+                                          src={bentoItem.image} 
+                                          alt="" 
+                                          className="w-full h-full object-cover pointer-events-none" 
+                                      />
+                                  </div>
+                              )}
+                              
+                              <div className="absolute inset-0 bg-gradient-to-b from-blue-500/0 via-blue-500/0 to-blue-500/[0.02] pointer-events-none z-0" />
+                              
+                              {/* Card Content */}
+                              <div className="relative z-10 flex flex-col gap-4">
+                                  <div className="flex items-center justify-between w-full">
+                                      <div className={cn(
+                                          "p-3 rounded-2xl border transition-all duration-500",
+                                          isActive 
+                                              ? "bg-blue-500/10 border-blue-500/30 text-blue-400" 
+                                              : "bg-slate-950/60 border-slate-800 text-slate-400 group-hover:text-slate-300"
+                                      )}>
+                                          {Icon}
+                                      </div>
+                                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                                          {bentoItem.subtitle}
+                                      </span>
+                                  </div>
+                                  
+                                  <div className="flex flex-col gap-1">
+                                      <h3 className="text-xl font-bold text-white tracking-tight">
+                                          {bentoItem.title}
+                                      </h3>
+                                      {/* Animate description display based on active state */}
+                                      <div className={cn(
+                                          "transition-all duration-500 ease-in-out overflow-hidden",
+                                          isActive ? "max-h-24 opacity-100 mt-2" : "max-h-0 opacity-0"
+                                      )}>
+                                          <p className="text-sm text-slate-300 leading-relaxed break-words whitespace-normal">
+                                              {bentoItem.description}
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                              {/* CTA Link Section */}
+                              <div className="relative z-10 flex items-center justify-between mt-6 pt-4 border-t border-slate-800/20">
+                                  <span className={cn(
+                                      "text-xs font-semibold uppercase tracking-wider transition-colors duration-500",
+                                      isActive ? "text-blue-400" : "text-slate-500"
+                                  )}>
+                                      {isActive ? "Tap again to connect" : "Tap to select"}
+                                  </span>
+                                  
+                                  {bentoItem.href && (
+                                      <a
+                                          href={bentoItem.href}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          onClick={(e) => {
+                                              // On mobile, if not already active, we intercept the click to expand first.
+                                              if (!isActive) {
+                                                  e.preventDefault();
+                                                  e.stopPropagation();
+                                                  setActiveBento(index);
+                                              }
+                                          }}
+                                          className={cn(
+                                              "flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300",
+                                              isActive 
+                                                  ? "bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-900/30 scale-105" 
+                                                  : "bg-slate-950/40 border border-slate-800 text-slate-400 hover:text-white"
+                                          )}
+                                      >
+                                          Connect <span className="inline-block transition-transform duration-300 group-hover:translate-x-0.5">➔</span>
+                                      </a>
+                                  )}
+                              </div>
+                          </div>
+                      );
                   })}
               </div>
           </section>

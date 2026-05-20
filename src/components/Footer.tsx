@@ -17,17 +17,20 @@ export function Footer() {
               Pioneering autonomous underwater vehicles for exploration and research.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors border border-slate-800">
+              <a href="https://github.com/MITB-AUVTeam" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors border border-slate-800">
                 <Github className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors border border-slate-800">
+              <a href="https://www.linkedin.com/company/team-auv-mit-b/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors border border-slate-800">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors border border-slate-800">
+              <a href="https://www.instagram.com/auv_mitb?igsh=azA2d2N3eGlqdDlh" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors border border-slate-800">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors border border-slate-800">
+              <a href="https://www.youtube.com/@TeamAUVMIT-B" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors border border-slate-800">
                 <Youtube className="w-4 h-4" />
+              </a>
+              <a href="mailto:auv.mitblr@manipal.edu" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors border border-slate-800">
+                <Mail className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -36,15 +39,21 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-6 tracking-wide uppercase text-sm">Contact Us</h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:abc@gmail.com" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-3 text-sm">
+                <a href="mailto:auv.mitblr@manipal.edu" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-3 text-sm">
                   <Mail className="w-4 h-4 text-slate-500" />
-                  abc@gmail.com
+                  auv.mitblr@manipal.edu
                 </a>
               </li>
               <li>
-                <a href="tel:+919999999999" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-3 text-sm">
+                <a href="tel:+918210876521" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-3 text-sm">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-slate-500"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  +91 99999 99999
+                  +91 82108 76521
+                </a>
+              </li>
+              <li>
+                <a href="tel:+919113095603" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-3 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-slate-500"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  +91 91130 95603
                 </a>
               </li>
             </ul>
@@ -63,14 +72,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-slate-800/50 pt-8 text-center">
           <p className="text-slate-500 text-xs">
             &copy; {new Date().getFullYear()} AUV Team. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs font-medium text-slate-500">
-            <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-slate-300 transition-colors">Terms of Service</a>
-          </div>
         </div>
       </div>
     </footer>

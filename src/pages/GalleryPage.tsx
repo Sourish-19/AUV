@@ -6,6 +6,7 @@ import Floating, {
 } from "@/components/ui/parallax-floating"
 import { FlipReveal, FlipRevealItem } from "@/components/ui/flip-reveal";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { Footer } from "@/components/Footer";
 
 const exampleImages = [
   {
@@ -154,7 +155,7 @@ export function GalleryPage() {
         </Floating>
       </div>
 
-      <div className="flex-1 min-h-screen flex flex-col items-center justify-start pt-24 pb-24 px-6 border-t border-white/5">
+      <div className="flex-1 min-h-screen flex flex-col items-center justify-start pt-24 pb-12 px-6 border-t border-white/5">
         <div className="max-w-7xl w-full flex flex-col items-center gap-12">
             <div className="text-center space-y-4">
                 <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
@@ -253,6 +254,8 @@ export function GalleryPage() {
             </FlipReveal>
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }

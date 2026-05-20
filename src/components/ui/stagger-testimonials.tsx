@@ -10,33 +10,33 @@ const SQRT_5000 = Math.sqrt(5000);
 const testimonials = [
   {
     tempId: 0,
-    testimonial: "The mechanical team is the backbone of our vehicle, ensuring structural integrity.",
-    by: "Mechanical Subsystem",
-    imgSrc: "https://picsum.photos/seed/mech/150/150"
+    testimonial: "Stay hungry. Stay goofy.",
+    by: "Animesh Mishra / Team Co-Lead",
+    imgSrc: "https://api.dicebear.com/7.x/identicon/svg?seed=AnimeshMishra"
   },
   {
     tempId: 1,
-    testimonial: "Powering the future. Our electrical systems are designed for maximum efficiency.",
-    by: "Electrical Subsystem",
-    imgSrc: "https://picsum.photos/seed/elec/150/150"
+    testimonial: "For the last time: there's more to controls than PID",
+    by: "Azad Roy / Technical Lead",
+    imgSrc: "https://api.dicebear.com/7.x/identicon/svg?seed=AzadRoy"
   },
   {
     tempId: 2,
-    testimonial: "Intelligent control and autonomous capabilities driven by cutting-edge software.",
-    by: "Software Subsystem",
-    imgSrc: "https://picsum.photos/seed/soft/150/150"
+    testimonial: "NAH, I'D WIN.",
+    by: "Sourish Sri Vignesh S / Design Team Member",
+    imgSrc: "https://api.dicebear.com/7.x/identicon/svg?seed=SourishSriVigneshS"
   },
   {
     tempId: 3,
-    testimonial: "Managing resources, timelines, and ensuring the team operates smoothly.",
-    by: "Management Subsystem",
-    imgSrc: "https://picsum.photos/seed/mgmt/150/150"
+    testimonial: "Life is short— skip DFS, do BFS :)",
+    by: "Aditya R Jemshetty / Software Subsystem",
+    imgSrc: "https://api.dicebear.com/7.x/identicon/svg?seed=AdityaRJemshetty"
   },
   {
     tempId: 4,
-    testimonial: "Designing the sleekest, most aerodynamic body for our vehicle.",
-    by: "Design Subsystem",
-    imgSrc: "https://picsum.photos/seed/design/150/150"
+    testimonial: "Professional pixel perfectionist.",
+    by: "Pritisha Kakati / Design Team Member",
+    imgSrc: "https://api.dicebear.com/7.x/identicon/svg?seed=PritishaKakati"
   }
 ];
 
@@ -93,14 +93,15 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           height: 2
         }}
       />
-      <img
-        src={testimonial.imgSrc}
-        alt={`${testimonial.by.split(',')[0]}`}
-        className="mb-4 h-14 w-12 bg-slate-800 object-cover object-top mx-auto"
-        style={{
-          boxShadow: "3px 3px 0px #020617"
-        }}
-      />
+      <div className="mb-4 flex justify-center">
+        <div className="h-16 w-16 overflow-hidden rounded-full border border-white/20 bg-slate-800 p-1 shadow-[3px_3px_0px_#020617]">
+          <img
+            src={testimonial.imgSrc}
+            alt={testimonial.by}
+            className="h-full w-full rounded-full object-cover"
+          />
+        </div>
+      </div>
       <h3 className={cn(
         "text-base sm:text-xl font-medium text-center",
         isCenter ? "text-white" : "text-slate-200"

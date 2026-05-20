@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Footer } from "@/components/Footer";
 import {
   motion,
   useMotionValue,
@@ -13,7 +14,6 @@ import {
   Github,
   Linkedin,
   Mail,
-  Sparkles,
 } from "lucide-react";
 import * as React from "react";
 import { useState } from "react";
@@ -95,71 +95,84 @@ const teamCategories = [
     ]
   },
   {
-    "title": "Software Subsystem",
+    "title": "Mechanical Subsystem",
     "members": [
       {
-        "name": "Aditya R Jemshetty",
-        "role": "Software and Automation Subsystem Member",
-        "bio": "Life is short— skip DFS, do BFS :)",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdityaRJemshetty",
+        "name": "Chatur Vasireddy",
+        "role": "Mechanical Subsystem Member",
+        "bio": "meow",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ChaturVasireddy",
         "location": "2nd Year",
-        "skills": ["Software"],
+        "skills": ["Mechanical"],
         "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
         "social": {
-          "linkedin": "https://www.linkedin.com/in/aditya-r-jemshetty-036311331/",
-          "github": "https://github.com/Aditya5191"
+          "linkedin": null,
+          "github": "https://github.com/ChaturVasireddy"
         }
       },
       {
-        "name": "Advithiya Duddu",
-        "role": "Software and Automation Subsystem Member",
-        "bio": "you miss 100% of the shots you don't take",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdvithiyaDuddu",
+        "name": "Faizal Yusuf Baig",
+        "role": "Mechanical Subsystem Member",
+        "bio": "Time you enjoy wasting is not wasted time.",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=FaizalYusufBaig",
         "location": "2nd Year",
-        "skills": ["Software"],
+        "skills": ["Mechanical"],
         "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
         "social": {
-          "linkedin": "https://www.linkedin.com/in/advithiya-duddu",
+          "linkedin": "https://www.linkedin.com/in/faizal-baig-6583b7371?utm_source=share_via&utm_content=profile&utm_medium=member_android",
           "github": null
         }
       },
       {
-        "name": "Piyush Sahoo",
-        "role": "Software and Automation Subsystem Member",
-        "bio": "Remember to source install/setup.bash ;)",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=PiyushSahoo",
-        "location": "1st Year",
-        "skills": ["Software"],
-        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "name": "Adwait Bhardwaj",
+        "role": "Mechanical Subsystem Member",
+        "bio": "aquamariner",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdwaitBhardwaj",
+        "location": "2nd Year",
+        "skills": ["Mechanical"],
+        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
         "social": {
-          "linkedin": "https://www.linkedin.com/in/piyush-sahoo-230269323/",
-          "github": "https://github.com/piyushSahooDB"
+          "linkedin": "https://www.linkedin.com/in/adwaitbhardwaj",
+          "github": "https://github.com/vt-abt"
         }
       },
       {
-        "name": "Aaishi Gupta",
-        "role": "Software and Automation Subsystem Member",
-        "bio": "",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AaishiGupta",
+        "name": "Kshithij Jaitly",
+        "role": "Mechanical Subsystem Member",
+        "bio": "Fusion pls dont crash !!!",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KshithijJaitly",
         "location": "1st Year",
-        "skills": ["Software"],
+        "skills": ["Mechanical"],
         "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
         "social": {
-          "linkedin": "https://www.linkedin.com/in/aaishi-gupta-1651782a9",
-          "github": "https://github.com/aaishii07"
+          "linkedin": "https://www.linkedin.com/in/kshithij-jaitly-84237b376",
+          "github": "https://github.com/kshithij-j"
         }
       },
       {
-        "name": "Farha P K",
-        "role": "Software and Automation Subsystem Member",
-        "bio": "",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=FarhaPK",
+        "name": "Kanishk Thoguluva Ramesh Babu",
+        "role": "Mechanical Subsystem Member",
+        "bio": "Monkey See Monkey Do",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KanishkThoguluvaRameshBabu",
         "location": "1st Year",
-        "skills": ["Software"],
+        "skills": ["Mechanical"],
         "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
         "social": {
           "linkedin": null,
           "github": null
+        }
+      },
+      {
+        "name": "Shaurya Veer Singh",
+        "role": "Mechanical Subsystem Member",
+        "bio": "Peace",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ShauryaVeerSingh",
+        "location": "1st Year",
+        "skills": ["Mechanical"],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/shaurya-veer-singh-23255b356/",
+          "github": "https://github.com/ShauryaVS-bit"
         }
       }
     ]
@@ -274,84 +287,71 @@ const teamCategories = [
     ]
   },
   {
-    "title": "Mechanical Subsystem",
+    "title": "Software Subsystem",
     "members": [
       {
-        "name": "Chatur Vasireddy",
-        "role": "Mechanical Subsystem Member",
-        "bio": "meow",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ChaturVasireddy",
+        "name": "Aditya R Jemshetty",
+        "role": "Software and Automation Subsystem Member",
+        "bio": "Life is short— skip DFS, do BFS :)",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdityaRJemshetty",
         "location": "2nd Year",
-        "skills": ["Mechanical"],
+        "skills": ["Software"],
         "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
         "social": {
-          "linkedin": null,
-          "github": "https://github.com/ChaturVasireddy"
+          "linkedin": "https://www.linkedin.com/in/aditya-r-jemshetty-036311331/",
+          "github": "https://github.com/Aditya5191"
         }
       },
       {
-        "name": "Faizal Yusuf Baig",
-        "role": "Mechanical Subsystem Member",
-        "bio": "Time you enjoy wasting is not wasted time.",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=FaizalYusufBaig",
+        "name": "Advithiya Duddu",
+        "role": "Software and Automation Subsystem Member",
+        "bio": "you miss 100% of the shots you don't take",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdvithiyaDuddu",
         "location": "2nd Year",
-        "skills": ["Mechanical"],
+        "skills": ["Software"],
         "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
         "social": {
-          "linkedin": "https://www.linkedin.com/in/faizal-baig-6583b7371?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+          "linkedin": "https://www.linkedin.com/in/advithiya-duddu",
           "github": null
         }
       },
       {
-        "name": "Adwait Bhardwaj",
-        "role": "Mechanical Subsystem Member",
-        "bio": "aquamariner",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AdwaitBhardwaj",
-        "location": "2nd Year",
-        "skills": ["Mechanical"],
-        "gradient": "from-cyan-500/20 via-cyan-500/5 to-transparent",
-        "social": {
-          "linkedin": "https://www.linkedin.com/in/adwaitbhardwaj",
-          "github": "https://github.com/vt-abt"
-        }
-      },
-      {
-        "name": "Kshithij Jaitly",
-        "role": "Mechanical Subsystem Member",
-        "bio": "Fusion pls dont crash !!!",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KshithijJaitly",
+        "name": "Piyush Sahoo",
+        "role": "Software and Automation Subsystem Member",
+        "bio": "Remember to source install/setup.bash ;)",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=PiyushSahoo",
         "location": "1st Year",
-        "skills": ["Mechanical"],
+        "skills": ["Software"],
         "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
         "social": {
-          "linkedin": "https://www.linkedin.com/in/kshithij-jaitly-84237b376",
-          "github": "https://github.com/kshithij-j"
+          "linkedin": "https://www.linkedin.com/in/piyush-sahoo-230269323/",
+          "github": "https://github.com/piyushSahooDB"
         }
       },
       {
-        "name": "Kanishk Thoguluva Ramesh Babu",
-        "role": "Mechanical Subsystem Member",
-        "bio": "Monkey See Monkey Do",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=KanishkThoguluvaRameshBabu",
+        "name": "Aaishi Gupta",
+        "role": "Software and Automation Subsystem Member",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=AaishiGupta",
         "location": "1st Year",
-        "skills": ["Mechanical"],
+        "skills": ["Software"],
+        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
+        "social": {
+          "linkedin": "https://www.linkedin.com/in/aaishi-gupta-1651782a9",
+          "github": "https://github.com/aaishii07"
+        }
+      },
+      {
+        "name": "Farha P K",
+        "role": "Software and Automation Subsystem Member",
+        "bio": "",
+        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=FarhaPK",
+        "location": "1st Year",
+        "skills": ["Software"],
         "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
         "social": {
           "linkedin": null,
           "github": null
-        }
-      },
-      {
-        "name": "Shaurya Veer Singh",
-        "role": "Mechanical Subsystem Member",
-        "bio": "Peace",
-        "image": "https://api.dicebear.com/7.x/identicon/svg?seed=ShauryaVeerSingh",
-        "location": "1st Year",
-        "skills": ["Mechanical"],
-        "gradient": "from-teal-500/20 via-teal-500/5 to-transparent",
-        "social": {
-          "linkedin": "https://www.linkedin.com/in/shaurya-veer-singh-23255b356/",
-          "github": "https://github.com/ShauryaVS-bit"
         }
       }
     ]
@@ -499,18 +499,7 @@ function TeamMemberCard({ member }: { member: any }) {
             }
           />
 
-          {/* Sparkle effect on hover */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={
-              isHovered
-                ? { opacity: 1, scale: 1 }
-                : { opacity: 0, scale: shouldReduceMotion ? 1 : 0.6 }
-            }
-            className="absolute right-4 top-4 z-10"
-          >
-            <Sparkles className="h-5 w-5 text-blue-400" aria-hidden />
-          </motion.div>
+
 
           <div className="relative z-10 p-6 flex flex-col h-full">
             {/* Avatar Section */}
@@ -667,10 +656,11 @@ export function TeamSectionBlock() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section
-      aria-labelledby="team-section-heading"
-      className="relative w-full overflow-hidden px-4 py-20 sm:px-6 lg:px-10"
-    >
+    <div className="min-h-screen bg-[#020617] text-slate-50 pb-0 font-sans">
+      <section
+        aria-labelledby="team-section-heading"
+        className="relative w-full overflow-hidden px-4 py-20 sm:px-6 lg:px-10"
+      >
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <motion.div
@@ -756,6 +746,8 @@ export function TeamSectionBlock() {
         </div>
 
       </div>
-    </section>
+      </section>
+      <Footer />
+    </div>
   );
 }

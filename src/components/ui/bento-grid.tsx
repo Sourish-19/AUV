@@ -53,7 +53,7 @@ const BentoCard = ({
     )}
   >
     <div>{background}</div>
-    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-1.5">
       <Icon className="h-12 w-12 origin-left transform-gpu text-slate-400 transition-all duration-300 ease-in-out group-hover:scale-75 group-hover:text-blue-400" />
       <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-100">
         {name}
@@ -63,13 +63,17 @@ const BentoCard = ({
 
     <div
       className={cn(
-        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
+        "pointer-events-none absolute top-4 right-4 z-20 flex opacity-0 -translate-y-2 transform-gpu transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
       )}
     >
-      <Button variant="ghost" asChild size="sm" className="pointer-events-auto text-blue-400 hover:text-blue-300">
-        <Link to={href}>
+      <Button 
+        variant="secondary" 
+        asChild 
+        className="group/btn pointer-events-auto rounded-full bg-slate-900/80 dark:bg-slate-950/80 backdrop-blur-md border border-slate-800/80 hover:bg-blue-600 hover:border-blue-500 text-slate-200 hover:text-white transition-all duration-300 px-3.5 py-1.5 text-[10px] uppercase font-bold tracking-wider hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] hover:scale-105 active:scale-95 transform-gpu h-auto"
+      >
+        <Link to={href} className="flex items-center gap-1">
           {cta}
-          <ArrowRightIcon className="ml-2 h-4 w-4" />
+          <ArrowRightIcon className="h-3 w-3 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
         </Link>
       </Button>
     </div>

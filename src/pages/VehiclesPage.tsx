@@ -12,6 +12,7 @@ import {
   Grab, 
   Waves 
 } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 export function VehiclesPage() {
   const vehicles = [
@@ -53,7 +54,7 @@ export function VehiclesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-slate-50 pb-24 font-sans">
+    <div className="min-h-screen bg-[#020617] text-slate-50 pb-0 font-sans">
       
       <section className="max-w-7xl mx-auto px-6 pt-12 md:pt-20 mb-20">
         <motion.div 
@@ -76,7 +77,7 @@ export function VehiclesPage() {
         </motion.div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6 space-y-32">
+      <div className="max-w-7xl mx-auto px-6 space-y-32 pb-24 md:pb-32">
         {vehicles.map((vehicle, index) => (
           <section key={vehicle.name} className="relative">
             <div className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center`}>
@@ -149,6 +150,8 @@ export function VehiclesPage() {
           </section>
         ))}
       </div>
+
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { LucideIcon, Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -18,7 +18,12 @@ interface NavBarProps {
 }
 
 export function NavBar({ items, className, children, isScrolled = false }: NavBarProps) {
-  const [activeTab, setActiveTab] = useState(items[0].name)
+  const location = useLocation()
+  const currentItem = items.find((item) => {
+    const normalize = (p: string) => p.replace(/\/$/, "").toLowerCase() || "/"
+    return normalize(item.url) === normalize(location.pathname)
+  }) || items[0]
+  const activeTab = currentItem.name
   const [isMobile, setIsMobile] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -68,41 +73,41 @@ export function NavBar({ items, className, children, isScrolled = false }: NavBa
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-3">
             {items.map((item) => {
-            const isActive = activeTab === item.name
+              const isActive = activeTab === item.name
 
-            return (
-              <Link
-                key={item.name}
-                to={item.url}
-                onClick={() => setActiveTab(item.name)}
-                className={cn(
-                  "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
-                  "text-slate-300 hover:text-blue-400",
-                  isActive && "bg-white/5 text-blue-400",
-                )}
-              >
-                <span>{item.name}</span>
-                {isActive && (
-                  <motion.div
-                    layoutId="lamp"
-                    className="absolute inset-0 w-full bg-blue-500/10 rounded-full -z-10"
-                    initial={false}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 30,
-                    }}
-                  >
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-blue-500 rounded-t-full">
-                      <div className="absolute w-12 h-6 bg-blue-500/20 rounded-full blur-md -top-2 -left-2" />
-                      <div className="absolute w-8 h-6 bg-blue-500/20 rounded-full blur-md -top-1" />
-                      <div className="absolute w-4 h-4 bg-blue-500/20 rounded-full blur-sm top-0 left-2" />
-                    </div>
-                  </motion.div>
-                )}
-              </Link>
-            )
-          })}
+              return (
+                <Link
+                  key={item.name}
+                  to={item.url}
+                  className={cn(
+                    "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
+                    "text-slate-300 hover:text-blue-400",
+                    isActive && "bg-white/5 text-blue-400",
+                  )}
+                >
+                  <span>{item.name}</span>
+                  {isActive && (
+                    <motion.div
+                      className="absolute inset-0 w-full bg-blue-500/10 rounded-full -z-10"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
+                    >
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-blue-500 rounded-t-full">
+                        <div className="absolute w-12 h-6 bg-blue-500/20 rounded-full blur-md -top-2 -left-2" />
+                        <div className="absolute w-8 h-6 bg-blue-500/20 rounded-full blur-md -top-1" />
+                        <div className="absolute w-4 h-4 bg-blue-500/20 rounded-full blur-sm top-0 left-2" />
+                      </div>
+                    </motion.div>
+                  )}
+                </Link>
+              )
+            })}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -151,7 +156,6 @@ export function NavBar({ items, className, children, isScrolled = false }: NavBa
                         key={item.name}
                         to={item.url}
                         onClick={() => {
-                          setActiveTab(item.name);
                           setIsMobileMenuOpen(false);
                         }}
                         className={cn(
